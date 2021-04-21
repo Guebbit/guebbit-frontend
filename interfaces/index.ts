@@ -1,0 +1,4 @@
+// store
+export interface stateMap {
+
+}
