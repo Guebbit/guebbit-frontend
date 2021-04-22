@@ -22,19 +22,35 @@
 		"Novembre",
 		"Dicembre"
 	],
-	"meta": {
-		"title": "Associazioni di Carpi",
-		"description": "Progetto Associazioni di Carpi",
-		"og": {
-			"og:image": "https://assets.guebbit.com/associazioni/images/castello-1-thumb800.jpg",
-			"og:image:alt": "",
-			"og:image:width": "800",
-			"og:image:height": "531",
-			"og:image:type": "image/jpg",
-			"twitter:image": "https://assets.guebbit.com/associazioni/images/castello-1-thumb800.jpg",
-			"twitter:title": "Associazioni di Carpi",
-			"twitter:description": "",
-			"twitter:card": "summary"
+	"generic": {
+		"old-browser-modal-title": "Rilevato browser non compatibile",
+		"old-browser-modal-text": "Consigliamo di aggiornare il browser in uso o di scaricarne di nuovi",
+		"chrome": "Chrome",
+		"firefox": "Firefox"
+	},
+	"website": {
+		"index": {
+			"meta": {
+				"title": "Guebbit | Web Developer Freelance",
+				"description": "Web Developer che realizza soluzioni web su misura per imprese e privati. Guebbit sviluppa siti internet e web application che portano benefici concreti",
+				"og": {
+					"og:image": "https://assets.guebbit.com/associazioni/images/castello-1-thumb800.jpg",
+					"og:image:alt": "",
+					"og:image:width": "800",
+					"og:image:height": "531",
+					"og:image:type": "image/jpg",
+					"twitter:image": "https://assets.guebbit.com/associazioni/images/castello-1-thumb800.jpg",
+					"twitter:title": "Guebbit Web Developer Freelance",
+					"twitter:description": "",
+					"twitter:card": "summary"
+				}
+			}
+		},
+		"login": {
+			"meta": {
+				"title": "Guebbit | Login",
+				"description": "Login gestionale"
+			}
 		}
 	}
 }

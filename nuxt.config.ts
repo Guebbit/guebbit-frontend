@@ -1,13 +1,16 @@
+import axios from 'axios';
 import colors from 'vuetify/es5/util/colors'
+
 
 export default {
 	// Target: https://go.nuxtjs.dev/config-target
 	target: 'static',
+	dev: process.env.NODE_ENV !== 'production',
 
 	env: {
 		baseUrl: process.env.BASE_URL || 'http://localhost:3000',
 		apiUrl: process.env.API_URL || 'localhost',
-		//enviroment: process.env.ENVIROMENT || 'development',
+		enviroment: process.env.NODE_ENV || 'development',
 	},
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
@@ -80,7 +83,9 @@ export default {
 
 	// Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
 	vuetify: {
-		customVariables: ['~/assets/variables.scss'],
+		customVariables: [
+			'~/assets/scss/variables.scss'
+		],
 		theme: {
 			dark: true,
 			themes: {
@@ -100,7 +105,7 @@ export default {
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
 		extractCSS: true,
-		extend (config, ctx) {
+		extend (config :any, ctx :any) {
 			config.module.rules.push({
 				test: /\.(ico|xml|webmanifest)$/,
 				loader: 'file-loader',
@@ -110,4 +115,28 @@ export default {
 			});
 		}
 	},
+
+	generate: {
+		subFolders: true,
+		async routes() {
+			// can't use store
+			let promises :Promise<any>[] = [];
+			/*
+			promises.push(
+				axios.get('http://ecsicarpi.api.guebbit.com/events').then((data :any) => {
+					return data.data.map((event :any) => {
+						return {
+							route: '/events/' + event.uri,
+							payload: event
+						}
+					})
+				})
+			);
+			*/
+			return Promise.all(promises).then((routes) => {
+				return routes.reduce((flat, next) => flat.concat(next), []);
+			});
+		}
+	},
+
 }
